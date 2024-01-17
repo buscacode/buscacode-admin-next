@@ -3,7 +3,7 @@ import { create } from 'zustand'
 export type SidenavStatus = 'OPENED' | 'CLOSED';
 
 export type State = {
-  sidebarOpened: boolean
+  isSidebarOpened: boolean
 }
 
 export type Actions = {
@@ -13,15 +13,15 @@ export type Actions = {
 
 // Partial<LayoutStore>
 const toggleSideBar = (state: State, value?: boolean)=> {
-  let tempValue : boolean = !state.sidebarOpened;
+  let tempValue : boolean = !state.isSidebarOpened;
   if(value) tempValue = value
 
   return {
-    sidebarOpened: tempValue
+    isSidebarOpened: tempValue
   }
 }
 
 export const useLayoutStore = create<State & Actions>()((set) => ({
-  sidebarOpened: true,
+  isSidebarOpened: true,
   toggleSidebar: (value) => set((state) => toggleSideBar(state, value)),
 }))

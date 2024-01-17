@@ -1,26 +1,30 @@
-//'use client'
+'use client'
 
-import type { Metadata } from 'next';
-import Image from 'next/image'
-//import { Encode_Sans_Expanded } from 'next/font/google';
+//import Image from 'next/image'
 import './admin.global.css'
-// import { useLayoutStore } from '~/store/layout.store';
+import { useLayoutStore } from '~/store/layout.store';
 import { clsx } from 'clsx';
 import HeaderApp from './components/layout/HeaderApp';
+import SidenavApp from './components/layout/SidenavApp';
+import { useState } from 'react';
 
 //const font = Encode_Sans_Expanded({ weight: '700', subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Admin | Buscauth',
-  description: 'Sitio raiz del admin.',
-}
+// export const metadata: Metadata = {
+//   title: 'Admin | Buscauth',
+//   description: 'Sitio raiz del admin.',
+// }
 
 
 const AdminLayout = ({ children, }: { children: React.ReactNode }) => {
 
   //const sidebarOpened = useLayoutStore(state => state.sidebarOpened)
-  // const { sidebarOpened } = useLayoutStore();
-  //console.log("sidebarOpened: ", sidebarOpened);
+  const { isSidebarOpened, toggleSidebar } = useLayoutStore();
+  console.log("sidebarOpened: ", isSidebarOpened);
+
+  const toggleIsOpen = () => {
+    toggleSidebar()
+  }
 
   return (
     <div
@@ -30,10 +34,29 @@ const AdminLayout = ({ children, }: { children: React.ReactNode }) => {
         }
       )}
     >
-      <HeaderApp className="asdf" />
+      <div
+        className={clsx('admin-layout__sidenav',
+          {
+            active: isSidebarOpened
+          }
+        )}
+      >
+        <SidenavApp className={clsx({active: isSidebarOpened})}/>
+      </div>
 
-      <div >
-        {children}
+      <div className={clsx('admin-layout__content',
+          {
+            active: isSidebarOpened
+          }
+        )}
+      >
+        <div className="admin-layout__header">
+          <HeaderApp className="" />
+        </div>
+        <main className="admin-layout__main">
+          {children}
+          <button onClick={toggleIsOpen}> click </button>
+        </main>
       </div>
     </div>
   )

@@ -10,9 +10,8 @@ const HeaderApp = ({ children, className }: ComponentProps) => {
 
   return (
     <div className={ clsx(styles['header-app'], className) }>
-      ss
       <div className={ styles['header-app__wrapper'] }>
-dd
+        El header
       </div>
     </div>
   )

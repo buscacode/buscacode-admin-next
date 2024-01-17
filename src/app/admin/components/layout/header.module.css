@@ -1,14 +1,11 @@
 /* tailwindcss */
 /* postcss: use tailwindcss */
 
-.bingo {
-  background-color: blueviolet
-}
+
 
 .header-app {
-  background-color: red;
   &__wrapper {
-    @apply bingo;
+
   }
 }
 

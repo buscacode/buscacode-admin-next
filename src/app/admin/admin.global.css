@@ -1,5 +1,65 @@
 .admin-layout{
-  --sidenav-width: 300px;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 
+  @at-root html {
+    --sidenav-width: 100px;
+    --header-heigt: 60px;
+    --z-index-layout-sidenav: 200;
+    --z-index-layout-header: 100;
+  }
 
+  &__sidenav {
+    background-color: blue;
+    width: var(--sidenav-width);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: width 0.2s ease-in;
+    box-sizing: border-box;
+    z-index: var(--z-index-layout-sidenav);
+
+    &.active {
+      --sidenav-width: 300px;
+    }
+  }
+
+  &__content {
+    padding-left: var(--sidenav-width);
+    transition: padding-left 0.2s ease-in;
+    height: 100%;
+    box-sizing: border-box;
+
+    &.active {
+      //padding-left: 300px;
+      --sidenav-width: 300px;
+
+      .admin-layout__header {
+        padding-left: var(--sidenav-width);
+      }
+    }
+  }
+
+  &__header {
+    height: var(--header-heigt);
+    background-color: green;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    transition: padding-left 0.2s ease-in;
+    z-index: var(--z-index-layout-header);
+    padding-left: var(--sidenav-width);
+  }
+  &__main {
+    padding-top: var(--header-heigt);
+    height: 100%;
+    background-color: red;
+    box-sizing: border-box;
+
+  }
 }
