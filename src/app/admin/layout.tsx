@@ -1,39 +1,42 @@
+//'use client'
+
 import type { Metadata } from 'next';
 import Image from 'next/image'
-import { Encode_Sans_Expanded } from 'next/font/google';
+//import { Encode_Sans_Expanded } from 'next/font/google';
+import './admin.global.css'
+// import { useLayoutStore } from '~/store/layout.store';
+import { clsx } from 'clsx';
+import HeaderApp from './components/layout/HeaderApp';
 
-const font = Encode_Sans_Expanded({ weight: '700', subsets: ['latin'] })
+//const font = Encode_Sans_Expanded({ weight: '700', subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Authenticacion | Buscauth',
-  description: 'Sitio para utenticarse en Buscauth.',
+  title: 'Admin | Buscauth',
+  description: 'Sitio raiz del admin.',
 }
 
 
-const AuthLayout = ({ children, }: { children: React.ReactNode }) => {
-  return (
-    <section>
-      <div>
-        <figure>
-          <Image
-            src="/assets/images/buscauth-logo.svg"
-            width={129.711}
-            height={117.821}
-            alt="Logo de Buscauth"
-          />
-          <figcaption>
-            <h2>
-              BUSCAUTH
-            </h2>
-          </figcaption>
-        </figure>
+const AdminLayout = ({ children, }: { children: React.ReactNode }) => {
 
-        <div >
-          {children}
-        </div>
+  //const sidebarOpened = useLayoutStore(state => state.sidebarOpened)
+  // const { sidebarOpened } = useLayoutStore();
+  //console.log("sidebarOpened: ", sidebarOpened);
+
+  return (
+    <div
+      className={clsx('admin-layout',
+        {
+          hola : true,
+        }
+      )}
+    >
+      <HeaderApp className="asdf" />
+
+      <div >
+        {children}
       </div>
-    </section>
+    </div>
   )
 }
 
-export default AuthLayout;
+export default AdminLayout;
