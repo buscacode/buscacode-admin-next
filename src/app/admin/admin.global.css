@@ -2,16 +2,24 @@
   height: 100vh;
   width: 100vw;
   position: relative;
+  /* https://www.cdnfonts.com/search?q=codec */
+  //font-family: "", Courier, 'helvetica';
+  font-size: 16px;
+
+  background-color: var(--background-color-component-2);
+  background-image: radial-gradient(circle, #051937, #07182f, #0a1627, #0c141f, #0d1117);
 
   @at-root html {
     --sidenav-width: 100px;
-    --header-heigt: 60px;
+    --header-height: 60px;
     --z-index-layout-sidenav: 200;
     --z-index-layout-header: 100;
-  }
 
+    --background-color-component: #0D1117;
+    --background-color-component-2: #051937;
+
+  }
   &__sidenav {
-    background-color: blue;
     width: var(--sidenav-width);
     position: absolute;
     left: 0;
@@ -43,8 +51,7 @@
   }
 
   &__header {
-    height: var(--header-heigt);
-    background-color: green;
+    height: var(--header-height);
     box-sizing: border-box;
     position: absolute;
     top: 0;
@@ -56,9 +63,8 @@
     padding-left: var(--sidenav-width);
   }
   &__main {
-    padding-top: var(--header-heigt);
+    padding-top: var(--header-height);
     height: 100%;
-    background-color: red;
     box-sizing: border-box;
 
   }

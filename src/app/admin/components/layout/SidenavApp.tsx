@@ -9,10 +9,11 @@ type ComponentProps = {
 const SidenavApp = ({ children, className }: ComponentProps) => {
 
   return (
-    <div className={styles['sidenav-app']}>
-      <h1> Iniciar Sesión </h1>
-      <button >click</button>
-    </div>
+    <aside className={styles['sidenav-app']}>
+      <div className={styles['sidenav-app__wrapper']}>
+
+      </div>
+    </aside>
   )
 }
 

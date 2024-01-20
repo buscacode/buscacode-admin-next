@@ -4,8 +4,25 @@
 
 
 .header-app {
-  &__wrapper {
+  height: 100%;
 
+  &__wrapper {
+    background-color: var(--background-color-component);
+    border-radius: 8px;
+    padding: 8px 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    height: var(--header-height);
+    @apply flex items-center justify-center gap-2;
+
+    strong {
+      /*@apply space-x-2 tracking-widest text-lg;*/
+      @apply space-x-2 tracking-wider text-lg;
+    }
   }
 }
 

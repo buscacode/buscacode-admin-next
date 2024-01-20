@@ -55,7 +55,6 @@ const AdminLayout = ({ children, }: { children: React.ReactNode }) => {
         </div>
         <main className="admin-layout__main">
           {children}
-          <button onClick={toggleIsOpen}> click </button>
         </main>
       </div>
     </div>

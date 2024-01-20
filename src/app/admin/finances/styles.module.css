@@ -1,4 +1,5 @@
 /*@config "tailwind.admin.config.js";*/
 
-.button-estilo {
+.finance-page {
+  padding: 16px;
 }
