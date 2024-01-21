@@ -19,6 +19,7 @@ const config: Config = {
         'primary': '#00AAA7',
         'secondary': '#EEA439',
         'tertiary': '#EE7A80',
+        'blackBack': '#0d1117',
         'white': {
           DEFAULT: '#fff',
           500: '#f5f5f5',
@@ -49,6 +50,19 @@ const config: Config = {
           black: '900',
         },
       },
+
+      keyframes: {
+        'faded': {
+          '0%': { opacity: '0', },
+          '50%': { opacity: '0.5' },
+          '100%': { opacity: '1' },
+        }
+      },
+      animation: {
+        faded: 'faded 0.5s ease-in-out 1 normal both',
+        'faded-reverse': 'faded 0.5s ease-in-out 1 reverse both',
+      }
+
     },
   },
   variants: {

@@ -1,0 +1,152 @@
+.sidenav-app {
+  @apply w-full h-full;
+
+  &__wrapper {
+    background-color: var(--background-color-component);
+    background-color: var(--background-color-component-2);
+    @apply w-full h-full overflow-hidden flex flex-col;
+    /* start glassmorphishm */
+    /* From https://css.glass */
+    //background: rgba(255 255 255 1);
+    background-color: rgba(255, 255, 255, 0.02);
+    filter: blur(0.5);
+    border-radius: 16px;
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    //border: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+
+    /*end glassmorphishm*/
+
+  }
+
+  &__header {
+    background-color: var(--background-color-component);
+    height: 150px;
+    @apply w-full h-20;
+  }
+  &__content {
+    @apply flex-grow;
+  }
+  &__actions {
+    @apply px-4 py-2 text-lg pb-6 flex justify-end;
+  }
+  &__retract {
+    @apply mx-auto w-fit;
+  }
+
+  &--short {
+    .sidenav-app{
+      &__header {
+
+      }
+      &__actions {
+        @apply px-2;
+      }
+    }
+  }
+}
+
+/* ===== SIDENAV GROUP ===== */
+
+.sidenav-group {
+  &__wrapper {
+    @apply px-4 py-2;
+  }
+  &__title {
+    @apply mb-3 text-xs text-gray-400;
+
+  }
+  &__icon {
+    @apply hidden;
+  }
+
+  &__list {
+     @apply grid grid-cols-1 grid-flow-row gap-2;
+  }
+
+  &--short {
+    .sidenav-group {
+      &__title {
+        span {
+          @apply hidden;
+        }
+      }
+      &__icon {
+        @apply block;
+      }
+    }
+  }
+}
+
+/* ===== SIDENAV LINK ===== */
+.sidenav-link {
+
+  &__wrapper {
+
+  }
+
+
+  &__link {
+    @apply
+      flex gap-x-6
+      rounded-lg
+      px-4 py-1.5
+      border border-transparent
+      hover:border-slate-700
+      hover:bg-blackBack;
+  }
+
+  &__element {
+    @apply flex gap-x-6 items-center text-xs ;
+    &-icon {
+
+    }
+    &-text {
+      @apply font-thin animate-faded;
+    }
+  }
+
+  &--short {
+    .sidenav-link {
+
+      &__link {
+        @apply
+          flex gap-x-6
+          rounded-lg
+          px-2.5 py-1.5
+          border border-transparent
+          hover:border-slate-700
+          hover:bg-blackBack;
+      }
+
+      &__element {
+        &-icon {
+          @apply text-base ;
+        }
+        &-text {
+          @apply hidden;
+        }
+      }
+    }
+  }
+  &--active {
+    .sidenav-link {
+
+      &__link {
+        @apply
+          border-slate-700
+          bg-blackBack;
+      }
+
+      &__element {
+        &-icon {
+        }
+        &-text {
+        }
+      }
+    }
+  }
+}

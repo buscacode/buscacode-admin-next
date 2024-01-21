@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from './header.module.css'
 import { clsx } from 'clsx';
 import Link from 'next/link';
+import { FaUserSecret } from "react-icons/fa6";
 
 type ComponentProps = {
   children?: React.ReactNode,
@@ -15,8 +16,10 @@ const HeaderApp = ({ children, className }: ComponentProps) => {
       <div className={ styles['header-app__wrapper'] }>
         <Link href="/admin/finances">
           <div className={ styles['header-app__logo'] }>
-            <Image src="/logo.svg" alt="" width={60} height={34}/>
+            {/* <Image src="/logo.svg" alt="" width={60} height={34}/> */}
             {/* <strong>BuscAdmin</strong> */}
+            {/* https://react-icons.github.io/react-icons/search/#q=user */}
+            {/* <FaUserSecret color='green'/> */}
           </div>
         </Link>
       </div>

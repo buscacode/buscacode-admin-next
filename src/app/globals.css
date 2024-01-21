@@ -30,3 +30,22 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+
+@layer components {
+  .comp-avatar {
+    @apply w-fit
+    m-auto p-3 rounded-full
+    h-20 flex items-center justify-center
+  }
+
+  .comp-button {
+    @apply bg-blackBack px-4 py-2 border border-transparent
+    rounded
+    hover:border-slate-700
+    hover:bg-blackBack
+    active:scale-95;
+
+  }
+}

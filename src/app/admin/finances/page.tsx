@@ -40,7 +40,6 @@ const FinancePage = () => {
 
   return (
     <div className={styles['finance-page']}>
-      <button onClick={()=>toggleSidebar()}>click</button>
       {/* <h1> Iniciar Sesión</h1>
 
       <div style={{width: '100px', lineBreak: 'strict', display: 'block'}}>{ JSON.stringify(mainData) }</div> */}

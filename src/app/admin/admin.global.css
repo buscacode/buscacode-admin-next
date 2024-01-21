@@ -5,12 +5,13 @@
   /* https://www.cdnfonts.com/search?q=codec */
   //font-family: "", Courier, 'helvetica';
   font-size: 16px;
+  font-size: 14px;
 
   background-color: var(--background-color-component-2);
   background-image: radial-gradient(circle, #051937, #07182f, #0a1627, #0c141f, #0d1117);
 
   @at-root html {
-    --sidenav-width: 100px;
+    --sidenav-width: 70px;
     --header-height: 60px;
     --z-index-layout-sidenav: 200;
     --z-index-layout-header: 100;
@@ -68,4 +69,8 @@
     box-sizing: border-box;
 
   }
+}
+
+.page {
+  padding: 16px;
 }

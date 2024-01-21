@@ -5,7 +5,7 @@ import './admin.global.css'
 import { useLayoutStore } from '~/store/layout.store';
 import { clsx } from 'clsx';
 import HeaderApp from './components/layout/HeaderApp';
-import SidenavApp from './components/layout/SidenavApp';
+import SidenavApp from './components/layout/sidenav/SidenavApp';
 import { useState } from 'react';
 
 //const font = Encode_Sans_Expanded({ weight: '700', subsets: ['latin'] })
@@ -29,25 +29,23 @@ const AdminLayout = ({ children, }: { children: React.ReactNode }) => {
   return (
     <div
       className={clsx('admin-layout',
-        {
-          hola : true,
-        }
+        { hola : true, }
       )}
     >
       <div
         className={clsx('admin-layout__sidenav',
-          {
-            active: isSidebarOpened
-          }
+          { active: isSidebarOpened }
         )}
       >
-        <SidenavApp className={clsx({active: isSidebarOpened})}/>
+        <SidenavApp
+          className={clsx({active: isSidebarOpened})}
+          isShort={!isSidebarOpened}
+          toggleSidenav={toggleIsOpen}
+        />
       </div>
 
       <div className={clsx('admin-layout__content',
-          {
-            active: isSidebarOpened
-          }
+          { active: isSidebarOpened }
         )}
       >
         <div className="admin-layout__header">
