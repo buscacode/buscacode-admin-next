@@ -7,6 +7,7 @@ import { clsx } from 'clsx';
 import HeaderApp from './components/layout/HeaderApp';
 import SidenavApp from './components/layout/sidenav/SidenavApp';
 import { useState } from 'react';
+import { FileSelectorProvider } from './components/system/file-selector-app/FileSelectorProvider';
 
 //const font = Encode_Sans_Expanded({ weight: '700', subsets: ['latin'] })
 
@@ -27,35 +28,37 @@ const AdminLayout = ({ children, }: { children: React.ReactNode }) => {
   }
 
   return (
-    <div
-      className={clsx('admin-layout',
-        { hola : true, }
-      )}
-    >
+    <FileSelectorProvider>
       <div
-        className={clsx('admin-layout__sidenav',
-          { active: isSidebarOpened }
+        className={clsx('admin-layout',
+          { hola : true, }
         )}
       >
-        <SidenavApp
-          className={clsx({active: isSidebarOpened})}
-          isShort={!isSidebarOpened}
-          toggleSidenav={toggleIsOpen}
-        />
-      </div>
-
-      <div className={clsx('admin-layout__content',
-          { active: isSidebarOpened }
-        )}
-      >
-        <div className="admin-layout__header">
-          <HeaderApp className="" />
+        <div
+          className={clsx('admin-layout__sidenav',
+            { active: isSidebarOpened }
+          )}
+        >
+          <SidenavApp
+            className={clsx({active: isSidebarOpened})}
+            isShort={!isSidebarOpened}
+            toggleSidenav={toggleIsOpen}
+          />
         </div>
-        <main className="admin-layout__main">
-          {children}
-        </main>
+
+        <div className={clsx('admin-layout__content',
+            { active: isSidebarOpened }
+          )}
+        >
+          <div className="admin-layout__header">
+            <HeaderApp className="" />
+          </div>
+          <main className="admin-layout__main">
+            {children}
+          </main>
+        </div>
       </div>
-    </div>
+    </FileSelectorProvider>
   )
 }
 

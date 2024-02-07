@@ -1,0 +1,28 @@
+
+.fileSelectorApp {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: #f511116b;
+  z-index: 500;
+  display: none;
+
+
+  .modal {
+
+    &__backgruard {
+
+    }
+
+    &__body {
+
+    }
+
+  }
+
+  &--active {
+    display: block;
+  }
+}
