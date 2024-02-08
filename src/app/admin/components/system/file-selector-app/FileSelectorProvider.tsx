@@ -1,7 +1,7 @@
 'use client'
 import { createContext, useState } from "react";
 import FileSelectorApp from './FileSelectorApp';
-import { useFileSelector } from "./useFileSelector";
+import { useFileSelectorController } from "./useFileSelector";
 import { FileSelectorType } from "./FileSelectorTypes";
 
 const defaultFileSelector:FileSelectorType = {
@@ -25,7 +25,7 @@ export const FileSelectorProvider = ({children}: {children: React.ReactNode}) =>
     changeIsMultiple,
     closeFileSelector,
     isMultiple
-  } = useFileSelector(false)
+  } = useFileSelectorController(false)
 
   console.log("Auqí debería cambiar algo: ", isOpen);
 

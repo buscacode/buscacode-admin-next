@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 import {clsx} from 'clsx';
 import { useContext, useEffect, useState } from 'react';
 import { FileSelectorContext } from '../../components/system/file-selector-app/FileSelectorProvider';
-import { useFileSelector, useFileSelectorController } from '../../components/system/file-selector-app/useFileSelector';
+import { useFileSelectorController, useFileSelector } from '../../components/system/file-selector-app/useFileSelector';
 
 // export const metadata: Metadata = {
 //   title: 'Finances | Buscauth',
@@ -23,7 +23,7 @@ const GastosFinancePage = () => {
   const [isOpen, changeIsOpen] = useState<boolean>(false);
   //const {toggleIsOpen} = useFileSelector();
 
-  const fileSelector = useFileSelectorController();
+  const fileSelector = useFileSelector();
 
   const openFileSelector = () => {
     changeIsOpen(!isOpen)

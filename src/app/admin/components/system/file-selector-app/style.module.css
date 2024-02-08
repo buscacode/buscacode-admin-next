@@ -1,19 +1,11 @@
 
 .fileSelectorApp {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background-color: #f511116b;
-  z-index: 500;
-  display: none;
-
+  @apply hidden absolute inset-0 z-[500];
 
   .modal {
-
-    &__backgruard {
-
+    @apply bg-red-950 absolute inset-0 m-auto w-min h-min;
+    &__backguard {
+      @apply bg-black opacity-0 h-full w-full transition-opacity;
     }
 
     &__body {
@@ -23,6 +15,12 @@
   }
 
   &--active {
-    display: block;
+    @apply block;
+
+    .modal {
+      &__backguard {
+        @apply opacity-50 transition-opacity;
+      }
+    }
   }
 }
