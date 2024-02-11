@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Pathway_Extreme } from 'next/font/google'
 import './globals.css'
-import Head from 'next/head'
+//import Head from 'next/head'
 
 const pathway_Extreme = Pathway_Extreme({ subsets: ['latin'] })
 

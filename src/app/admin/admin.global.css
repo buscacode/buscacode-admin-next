@@ -3,7 +3,7 @@
   width: 100vw;
   position: relative;
   /* https://www.cdnfonts.com/search?q=codec */
-  //font-family: "", Courier, 'helvetica';
+  /* font-family: "", Courier, 'helvetica'; */
   font-size: 16px;
   font-size: 14px;
 
@@ -13,8 +13,8 @@
   @at-root html {
     --sidenav-width: 70px;
     --header-height: 60px;
-    --z-index-layout-sidenav: 200;
-    --z-index-layout-header: 100;
+    --z-index-layout-sidenav: auto;
+    --z-index-layout-header: auto;
 
     --background-color-component: #0D1117;
     --background-color-component-2: #051937;
@@ -42,7 +42,7 @@
     box-sizing: border-box;
 
     &.active {
-      //padding-left: 300px;
+      /* padding-left: 300px; */
       --sidenav-width: 300px;
 
       .admin-layout__header {

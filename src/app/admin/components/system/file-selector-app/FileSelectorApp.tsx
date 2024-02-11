@@ -6,8 +6,9 @@ import * as Tabs from '@radix-ui/react-tabs';
 import FileListFieldApp from './sub-components/FileListFieldApp';
 import { useState } from 'react';
 import { TbDotsVertical } from "react-icons/tb";
-
-
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { MdCreateNewFolder } from "react-icons/md";
+import { MdNoteAdd } from "react-icons/md";
 
 type ComponentProps = {
   children?: React.ReactNode,
@@ -25,6 +26,12 @@ const FileSelectorApp = ({ children, className}: ComponentProps) => {
   const closeModal = () => {
     fileSelectorController.closeFileSelector()
   }
+  const addNewFile = () => {
+    console.log("Add new File");
+  }
+  const addNewDirectory = () => {
+    console.log("Add new Directory");
+  }
   return (
     <div className={clsx( styles.fileSelectorApp, className, {
       [styles['fileSelectorApp--active']]: fileSelectorController.isOpen
@@ -36,9 +43,38 @@ const FileSelectorApp = ({ children, className}: ComponentProps) => {
           <div className={styles.modal__head}>
             <h3 className={styles.modal__title}>
               Selecciona tu archivo
-              <div className={styles.modal__more}>
-                <TbDotsVertical />
-              </div>
+              {/* <div className={styles.modal__more}> */}
+                <DropdownMenu.Root>
+                  <DropdownMenu.Trigger asChild>
+                    <div className={styles.modal__more}>
+                      <TbDotsVertical />
+                    </div>
+                  </DropdownMenu.Trigger>
+                  <DropdownMenu.Portal >
+                    <DropdownMenu.Content className={styles.dropdownMenuContent} sideOffset={5}>
+                      <DropdownMenu.Item className={styles.dropdownMenuItem}
+                        onClick={addNewDirectory}
+                      >
+                        Agregar carpeta
+                        <div className={styles.dropdownMenuItem__icon}>
+                          <MdCreateNewFolder />
+                        </div>
+                      </DropdownMenu.Item>
+                      <DropdownMenu.Item className={styles.dropdownMenuItem}
+                        onClick={addNewFile}
+                      >
+                        Agregar archivo
+                        <div className={styles.dropdownMenuItem__icon}>
+                          <MdNoteAdd />
+                        </div>
+                      </DropdownMenu.Item>
+
+                      <DropdownMenu.Arrow className={styles.dropdownMenuArrow} />
+                    </DropdownMenu.Content>
+
+                  </DropdownMenu.Portal>
+                </DropdownMenu.Root>
+              {/* </div> */}
             </h3>
             <button
               className={styles.modal__close}

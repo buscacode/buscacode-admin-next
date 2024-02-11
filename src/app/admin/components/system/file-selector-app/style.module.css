@@ -1,6 +1,7 @@
 
 .fileSelectorApp {
-  @apply hidden absolute inset-0 z-[500];
+  /* @apply hidden absolute inset-0 z-[500]; */
+  @apply hidden absolute inset-0 ;
 
   .modal {
     @apply bg-blackBack/[0.85]
@@ -18,7 +19,7 @@
     max-w-[90%]
     lg:max-w-[70%]
     max-h-[70%]
-    z-50
+    /* z-50 */
     ;
     &__backguard {
       @apply bg-black opacity-0 h-full w-full transition-opacity;
@@ -64,6 +65,7 @@
       ml-1
       rounded-full
       ;
+
     }
 
     &__content {
@@ -131,6 +133,8 @@
     }
   }
 
+
+
   &--active {
     @apply block;
 
@@ -141,6 +145,62 @@
     }
   }
 }
+
+
+.dropdownMenu {
+
+}
+
+.dropdownMenuContent{
+  @apply min-w-48
+  relative
+  bg-blackBack
+  rounded-md
+  p-1
+  drop-shadow-sm
+  ;
+}
+
+.dropdownMenuItem{
+  @apply
+  text-[11px]
+  relative
+  hover:bg-teal-900
+  ;
+
+  line-height: 1;
+  color: var(--violet-11);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 5px;
+  position: relative;
+  padding-left: 25px;
+  user-select: none;
+  outline: none;
+
+  &__icon {
+    @apply ml-auto
+    text-base
+    ;
+  }
+}
+
+.dropdownMenuItemIndicator {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.dropdownMenuArrow {
+  fill: white;
+}
+
 
 
 
