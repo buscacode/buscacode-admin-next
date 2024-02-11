@@ -33,7 +33,7 @@ export const useFileSelectorController: UseFileSelector = (isMultipleDefault = f
     return await new Promise<FileEntity[] | FileEntity | null>((resolve, reject) => {
       changeIsOpen(true)
       changeResolveFn(resolve)
-      const fileSelector : FileEntity[] | FileEntity | null = {}
+      const fileSelector : FileEntity[] | FileEntity | null = null
       //resolve(fileSelector)
       setTimeout(()=>{
         console.log("Cerrando el  selector automaticamente:: >");

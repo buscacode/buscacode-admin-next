@@ -66,7 +66,7 @@ const SidenavApp = ({ children, className, isShort, toggleSidenav = ()=>{} }: Co
           <div className={'comp-avatar'}>
             <Link href="/admin/finances">
               <div className={ styles['sidenav-app__avatar'] }>
-                <Image src="/logo.svg" alt="" width={60} height={34}/>
+                <Image src="/logo.svg" alt="" width={60} height={34} priority={true}/>
               </div>
             </Link>
           </div>
